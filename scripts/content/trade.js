@@ -15,7 +15,6 @@ chrome.runtime.sendMessage({ action: "getItemInfo" }).then((response) => {
         };
         fetch(apiUrl, {
             method: "POST",
-            // mode: "no-cors", // Set the mode to 'no-cors'
             headers: {
                 Accept: "application/json",
                 "Content-Type": "application/json",
