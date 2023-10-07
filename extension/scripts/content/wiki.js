@@ -2,12 +2,12 @@ const parentSpan = document.querySelector(
     "span.item-box.-unique > span.header.-double"
 );
 // Initialize variables to store the "name" and "type"
-var itemName;
-var itemType;
+let itemName;
+let itemType;
 
 // Loop through the child nodes of the parent span element
-for (var i = 0; i < parentSpan.childNodes.length; i++) {
-    var childNode = parentSpan?.childNodes?.[i];
+for (let i = 0; i < parentSpan.childNodes.length; i++) {
+    const childNode = parentSpan?.childNodes?.[i];
 
     // Check if the child node is a text node (nodeType 3) and not empty
     if (
@@ -16,17 +16,16 @@ for (var i = 0; i < parentSpan.childNodes.length; i++) {
         childNode.textContent.trim() !== ""
     ) {
         // Check if the variable "name" is empty, if so, assign the text content to it
-        if (!itemName) {
-            itemName = childNode.textContent.trim();
-        } else {
+        if (itemName) {
             // If "name" is not empty, assign the text content to the variable "type"
             itemType = childNode.textContent.trim();
-            // break; // Exit the loop after finding the "type"
+        } else {
+            itemName = childNode.textContent.trim();
         }
     }
 }
 // Find the element with the class ".mw-page-title-main"
-var pageTitleMain = document.querySelector(".mw-page-title-main");
+const pageTitleMain = document.querySelector(".mw-page-title-main");
 if (pageTitleMain && itemName && itemType) {
     // Create a new button element
     const button = document.createElement("button");
@@ -42,7 +41,7 @@ if (pageTitleMain && itemName && itemType) {
     button.style.fontFamily = "var(--stylized-smallcaps-font)";
 
     const svgUrl = chrome.runtime.getURL("images/open-new-window.svg");
-    var iconImage = document.createElement("img");
+    const iconImage = document.createElement("img");
     iconImage.src = svgUrl;
     iconImage.style.width = "1rem";
     iconImage.alt = "Icon";
