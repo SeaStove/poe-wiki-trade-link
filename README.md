@@ -2,9 +2,18 @@
 
 **Description:** This Chrome extension adds a button to the Path of Exile (PoE) Wiki page to quickly open a PoE trade search page for a specific item. It allows you to seamlessly transition from researching an item on the PoE Wiki to finding it on the PoE trade platform.
 
-# Example
+## Example
 
 ![](https://github.com/SeaStove/poe-wiki-trade-link/blob/main/images/example.gif)
+
+## FAQ
+
+-   Are there any downsides?
+
+    -   I have found in my testing that making too many requests too quickly will get you timed out from the trade site, just like with other tools. I don't know the exact number. This is using roughly the same process [Awakened PoE Trade](https://github.com/SnosMe/awakened-poe-trade/blob/b446c617cc1d4970067c209cf172a5dd93fcf72a/renderer/src/web/price-check/trade/pathofexile-trade.ts#L83) uses.
+
+-   Is there a Firefox version?
+    -   Unfortunately at this time Firefox does not support Service Workers which are required to run the extension. If the architecture changes to remove the service worker or Firefox allows them then I will add a Firefox extension.
 
 ## Files
 
