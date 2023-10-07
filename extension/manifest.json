@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "PoE Wiki Trade Link",
     "description": "Adds a link to every PoEWiki page to the trade site for that item.",
-    "version": "0.1",
+    "version": "0.2",
     "permissions": ["tabs"],
     "background": {
         "service_worker": "scripts/service_worker/background.js"
