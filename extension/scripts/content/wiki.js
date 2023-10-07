@@ -42,7 +42,6 @@ if (pageTitleMain && itemName && itemType) {
     button.style.fontFamily = "var(--stylized-smallcaps-font)";
 
     const svgUrl = chrome.runtime.getURL("images/open-new-window.svg");
-    console.log("svgUrl", svgUrl);
     var iconImage = document.createElement("img");
     iconImage.src = svgUrl;
     iconImage.style.width = "1rem";
