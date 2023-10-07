@@ -76,5 +76,5 @@ function setLoadingStyles(button) {
     button.textContent = "Loading...";
     button.disabled = true;
     button.style.cursor = "default";
-    button.style.color = "--poe-color-default";
+    button.style.color = "var(--poe-color-default)";
 }
