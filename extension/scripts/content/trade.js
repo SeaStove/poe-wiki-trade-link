@@ -1,10 +1,10 @@
 chrome.runtime.sendMessage({ action: "getItemInfo" }).then((response) => {
-    const { league = "Ancestor" } = JSON.parse(
-        localStorage.getItem("lscache-tradestate")
-    );
-    const apiUrl = `https://www.pathofexile.com/api/trade/search/${league}`;
-    const webUrl = `https://www.pathofexile.com/trade/search/${league}`;
     if (response && response.itemName && response.itemType) {
+        const { league = "Ancestor" } = JSON.parse(
+            localStorage.getItem("lscache-tradestate")
+        );
+        const apiUrl = `https://www.pathofexile.com/api/trade/search/${league}`;
+        const webUrl = `https://www.pathofexile.com/trade/search/${league}`;
         const { itemName, itemType } = response;
         const bodyData = {
             query: {
