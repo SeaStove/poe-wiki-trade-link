@@ -1,7 +1,9 @@
-const apiUrl = "https://www.pathofexile.com/api/trade/search/Ancestor";
-const webUrl = "https://www.pathofexile.com/trade/search/Ancestor";
-
 chrome.runtime.sendMessage({ action: "getItemInfo" }).then((response) => {
+    const { league = "Ancestor" } = JSON.parse(
+        localStorage.getItem("lscache-tradestate")
+    );
+    const apiUrl = `https://www.pathofexile.com/api/trade/search/${league}`;
+    const webUrl = `https://www.pathofexile.com/trade/search/${league}`;
     if (response && response.itemName && response.itemType) {
         const { itemName, itemType } = response;
         const bodyData = {
@@ -26,7 +28,6 @@ chrome.runtime.sendMessage({ action: "getItemInfo" }).then((response) => {
                 // Handle the response data here
                 let myNewUrl = `${webUrl}/${data.id}`;
                 document.location = myNewUrl;
-                console.log(data);
             })
             .catch((error) => {
                 // Handle any errors here

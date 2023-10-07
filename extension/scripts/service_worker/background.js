@@ -1,13 +1,11 @@
 const itemsStore = {};
 
 chrome.runtime.onMessage.addListener(function (message, sender, sendResponse) {
-    console.log(sender);
     if (message.action === "openTradePage") {
         var url = "https://www.pathofexile.com/trade/";
 
         chrome.tabs.create({ url, active: false }, function (tab) {
             const openedTabId = tab.id;
-            console.log("created tab id", tab.id);
 
             itemsStore[openedTabId] = {
                 itemName: message.itemName,
