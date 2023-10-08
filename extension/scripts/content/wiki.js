@@ -23,12 +23,9 @@ if (textContent.length == 1) {
 } else if (textContent.length == 2) {
     messageData.name = textContent[0];
     messageData.type = textContent[1];
-} else {
-    console.error("Could not parse item name and type");
 }
 
 // Find the element with the class ".mw-page-title-main"
-console.log(messageData);
 const pageTitleMain = document.querySelector(".mw-page-title-main");
 if (pageTitleMain && messageData.type) {
     // Create a new button element

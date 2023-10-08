@@ -1,5 +1,4 @@
 chrome.runtime.sendMessage({ action: "getItemInfo" }).then((response) => {
-    console.log(response);
     if (!response?.data?.type) {
         return;
     }
@@ -17,7 +16,6 @@ chrome.runtime.sendMessage({ action: "getItemInfo" }).then((response) => {
         },
         sort: { price: "asc" },
     };
-    console.log(bodyData);
     fetch(apiUrl, {
         method: "POST",
         headers: {
@@ -29,7 +27,6 @@ chrome.runtime.sendMessage({ action: "getItemInfo" }).then((response) => {
         .then((response) => response.json())
         .then((data) => {
             let myNewUrl = `${webUrl}/${data.id}`;
-            console.log(myNewUrl);
             document.location = myNewUrl;
         })
         .catch((error) => {
