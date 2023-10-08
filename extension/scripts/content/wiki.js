@@ -1,32 +1,33 @@
-const parentSpan = document.querySelector(
-    "span.item-box.-unique > span.header.-double"
-);
+const parentSpan = document.querySelector("span.item-box > span.header");
 // Initialize variables to store the "name" and "type"
-let itemName;
-let itemType;
+const messageData = {};
+const textContent = [];
 
 // Loop through the child nodes of the parent span element
 for (let i = 0; i < parentSpan.childNodes.length; i++) {
     const childNode = parentSpan?.childNodes?.[i];
-
     // Check if the child node is a text node (nodeType 3) and not empty
     if (
         childNode &&
         childNode.nodeType === 3 &&
         childNode.textContent.trim() !== ""
     ) {
-        // Check if the variable "name" is empty, if so, assign the text content to it
-        if (itemName) {
-            // If "name" is not empty, assign the text content to the variable "type"
-            itemType = childNode.textContent.trim();
-        } else {
-            itemName = childNode.textContent.trim();
-        }
+        textContent.push(childNode.textContent.trim());
     }
 }
+
+if (textContent.length == 1) {
+    messageData.type = textContent[0];
+} else if (textContent.length == 2) {
+    messageData.name = textContent[0];
+    messageData.type = textContent[1];
+} else {
+    console.error("Could not parse item name and type");
+}
+
 // Find the element with the class ".mw-page-title-main"
 const pageTitleMain = document.querySelector(".mw-page-title-main");
-if (pageTitleMain && itemName && itemType) {
+if (pageTitleMain && messageData.type) {
     // Create a new button element
     const button = document.createElement("button");
     button.href = "#";
@@ -52,8 +53,7 @@ if (pageTitleMain && itemName && itemType) {
         setLoadingStyles(button);
         chrome.runtime.sendMessage({
             action: "openTradePage",
-            itemName,
-            itemType,
+            ...messageData,
         });
         setTimeout(function () {
             setButtonStyles(button, iconImage);

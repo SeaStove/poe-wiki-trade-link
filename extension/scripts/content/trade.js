@@ -1,22 +1,23 @@
 chrome.runtime.sendMessage({ action: "getItemInfo" }).then((response) => {
-    if (!(response?.itemName && response.itemType)) {
+    console.log(response);
+    if (!response?.data?.type) {
         return;
     }
-    const { league = "Ancestor" } = JSON.parse(
+
+    const { league = "Ancestor", status = "online" } = JSON.parse(
         localStorage.getItem("lscache-tradestate")
     );
     const apiUrl = `https://www.pathofexile.com/api/trade/search/${league}`;
     const webUrl = `https://www.pathofexile.com/trade/search/${league}`;
-    const { itemName, itemType } = response;
     const bodyData = {
         query: {
-            status: { option: "any" },
-            name: itemName,
-            type: itemType,
+            status: { option: status },
+            ...response.data,
             stats: [{ type: "and", filters: [] }],
         },
         sort: { price: "asc" },
     };
+    console.log(bodyData);
     fetch(apiUrl, {
         method: "POST",
         headers: {
@@ -28,6 +29,7 @@ chrome.runtime.sendMessage({ action: "getItemInfo" }).then((response) => {
         .then((response) => response.json())
         .then((data) => {
             let myNewUrl = `${webUrl}/${data.id}`;
+            console.log(myNewUrl);
             document.location = myNewUrl;
         })
         .catch((error) => {
