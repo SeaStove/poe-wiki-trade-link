@@ -28,6 +28,9 @@
 
 -   Is there a Firefox version?
     -   Unfortunately at this time Firefox does not support Service Workers which are required to run the extension. If the architecture changes to remove the service worker or Firefox allows them then I will add a Firefox extension.
+ 
+-   This sucks for X reason
+    -   I'm always looking for ways to improve the tool, please create an Issue in the Issues tab to report bugs or feature requests :)
 
 ## The Code
 
