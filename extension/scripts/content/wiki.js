@@ -1,4 +1,6 @@
-const parentSpan = document.querySelector("span.item-box > span.header");
+const parentSpan = document.querySelector(
+    ".mw-parser-output .infobox-page-container span.item-box > span.header"
+);
 // Initialize variables to store the "name" and "type"
 const messageData = {};
 const textContent = [];
@@ -26,6 +28,7 @@ if (textContent.length == 1) {
 }
 
 // Find the element with the class ".mw-page-title-main"
+console.log(messageData);
 const pageTitleMain = document.querySelector(".mw-page-title-main");
 if (pageTitleMain && messageData.type) {
     // Create a new button element
