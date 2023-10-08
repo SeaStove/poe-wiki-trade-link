@@ -3,7 +3,7 @@
     "name": "PoE Wiki Trade Link",
     "description": "Adds a link to every PoEWiki page to the trade site for that item.",
     "version": "0.2",
-    "permissions": ["tabs"],
+    "permissions": [],
     "background": {
         "service_worker": "scripts/service_worker/background.js"
     },
