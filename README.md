@@ -1,6 +1,6 @@
 # PoE Wiki Trade Link
 
-**Description:** This Chrome extension adds a button to the Path of Exile (PoE) Wiki page to quickly open a PoE trade search page for a specific item. It allows you to seamlessly transition from researching an item on the PoE Wiki to finding it on the PoE trade platform.
+**Description:** This Chrome extension adds a button to the [Path of Exile (PoE) Wiki](https://poewiki.net/) page to quickly open a [PoE trade](https://www.pathofexile.com/trade) search page for a specific item. It allows you to seamlessly transition from researching an item on the PoE Wiki to finding it on the PoE trade platform.
 
 ## Example
 
