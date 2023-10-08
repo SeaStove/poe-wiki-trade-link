@@ -29,18 +29,18 @@
 -   Is there a Firefox version?
     -   Unfortunately at this time Firefox does not support Service Workers which are required to run the extension. If the architecture changes to remove the service worker or Firefox allows them then I will add a Firefox extension.
  
--   This sucks for X reason
-    -   I'm always looking for ways to improve the tool, please create an Issue in the Issues tab to report bugs or feature requests :)
+-   This doesn't work for me?
+    -   My testing scope of this tool is very limited, and I'm always looking for ways to improve it. Please create an Issue in the Issues tab to report bugs or feature requests.
 
 ## The Code
 
-Getting a link to the PoE Trade site for a specific item is surprisingly complicated. In order to get this to work, the item name and type is grabbed from the wiki page, then a new tab is opened with the PoE Trade site. That new tab executes a query to the trade site's api to get the hash to go in the URL. Then the page is reloaded with that hash.
+Getting a link to the PoE Trade site for a specific item is surprisingly complicated. To get this to work, the item name and type are grabbed from the wiki page, then a new tab is opened with the PoE Trade site. That new tab executes a query to the trade site's API to get the hash to go in the URL. Then the page is reloaded with that hash.
 
 ### Wiki.js
 
 This JavaScript file is responsible for:
 
--   Extracting the item's name and type from the PoE Wiki page.
+-   Extract the item's name and type from the PoE Wiki page.
 -   Creating and styling a button to open the PoE trade search page.
 -   Handling button clicks and sending a message to the background script to initiate the trade search.
 
