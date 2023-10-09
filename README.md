@@ -30,7 +30,7 @@
     -   Unfortunately at this time Firefox does not support Service Workers which are required to run the extension. If the architecture changes to remove the service worker or Firefox allows them then I will add a Firefox extension.
  
 -   This doesn't work for me?
-    -   My testing scope of this tool is very limited, and I'm always looking for ways to improve it. Please create an Issue in the [Issues tab](https://github.com/SeaStove/poe-wiki-trade-link/issues) to report bugs or feature requests. You can view the current Kanban board [here](https://github.com/users/SeaStove/projects/3/views/1)
+    -   My testing scope of this tool is very limited, and I'm always looking for ways to improve it. Please create an Issue in the [Issues tab](https://github.com/SeaStove/poe-wiki-trade-link/issues) to report bugs or feature requests. You can view the project's [Kanban board](https://github.com/users/SeaStove/projects/3/views/1) to see the status of issues.
 
 ## The Code
 
