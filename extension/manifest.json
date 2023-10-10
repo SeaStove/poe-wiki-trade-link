@@ -2,11 +2,8 @@
     "manifest_version": 3,
     "name": "PoE Wiki Trade Link",
     "description": "Adds a link to every PoEWiki page to the trade site for that item.",
-    "version": "0.2",
+    "version": "0.3",
     "permissions": [],
-    "background": {
-        "service_worker": "scripts/service_worker/background.js"
-    },
     "web_accessible_resources": [
         {
             "resources": ["images/open-new-window.svg"],
@@ -17,10 +14,6 @@
         {
             "js": ["scripts/content/wiki.js"],
             "matches": ["https://www.poewiki.net/*"]
-        },
-        {
-            "js": ["scripts/content/trade.js"],
-            "matches": ["https://www.pathofexile.com/trade/*"]
         }
     ]
 }

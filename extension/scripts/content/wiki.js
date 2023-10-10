@@ -28,18 +28,26 @@ if (textContent.length == 1) {
 // Find the element with the class ".mw-page-title-main"
 const pageTitleMain = document.querySelector(".mw-page-title-main");
 if (pageTitleMain && messageData.type) {
-    // Create a new button element
-    const button = document.createElement("button");
-    button.href = "#";
-    button.style.fontSize = "1rem";
-    button.style.marginLeft = "1rem";
-    button.style.backgroundColor = "#513723";
-    button.style.border = "none";
-    button.style.borderRadius = "0.25rem";
-    button.style.color = "var(--link-color)";
-    button.style.cursor = "pointer";
-    button.style.padding = "0.1rem 0.5rem";
-    button.style.fontFamily = "var(--stylized-smallcaps-font)";
+    const aTag = document.createElement("a");
+    aTag.href = `https://www.pathofexile.com/trade/search/Ancestor?q={%22query%22:{%22type%22:%22${encodeURIComponent(
+        messageData.type
+    )}%22${
+        messageData.name
+            ? `,%22name%22:%22${encodeURIComponent(messageData.name)}%22`
+            : ``
+    }}}`;
+    aTag.target = "_blank"; // Open in a new tab
+    aTag.rel = "noreferrer"; // No referrer
+    aTag.style.fontSize = "1rem";
+    aTag.style.marginLeft = "1rem";
+    aTag.style.backgroundColor = "#513723";
+    aTag.style.border = "none";
+    aTag.style.borderRadius = "0.25rem";
+    aTag.style.color = "var(--link-color)";
+    aTag.style.cursor = "pointer";
+    aTag.style.padding = "0.1rem 0.5rem";
+    aTag.style.fontFamily = "var(--stylized-smallcaps-font)";
+    aTag.textContent = "Trade";
 
     const svgUrl = chrome.runtime.getURL("images/open-new-window.svg");
     const iconImage = document.createElement("img");
@@ -47,33 +55,7 @@ if (pageTitleMain && messageData.type) {
     iconImage.style.width = "1rem";
     iconImage.alt = "Icon";
 
-    setButtonStyles(button, iconImage);
+    aTag.appendChild(iconImage);
 
-    button.addEventListener("click", function () {
-        setLoadingStyles(button);
-        chrome.runtime.sendMessage({
-            action: "openTradePage",
-            ...messageData,
-        });
-        setTimeout(function () {
-            setButtonStyles(button, iconImage);
-        }, 1000);
-    });
-
-    pageTitleMain.parentNode.insertBefore(button, pageTitleMain.nextSibling);
-}
-
-function setButtonStyles(button, iconImage) {
-    button.textContent = "Trade ";
-    button.style.color = "var(--link-color)";
-    button.style.cursor = "pointer";
-    button.appendChild(iconImage);
-    button.disabled = false;
-}
-
-function setLoadingStyles(button) {
-    button.textContent = "Loading...";
-    button.disabled = true;
-    button.style.cursor = "default";
-    button.style.color = "var(--poe-color-default)";
+    pageTitleMain.parentNode.insertBefore(aTag, pageTitleMain.nextSibling);
 }
