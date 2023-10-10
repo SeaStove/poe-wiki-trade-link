@@ -1,6 +1,6 @@
 # PoE Wiki Trade Link
 
-**Description:** This Chrome extension adds a button to the Path of Exile (PoE) Wiki page to quickly open a PoE trade search page for a specific item. It allows you to seamlessly transition from researching an item on the PoE Wiki to finding it on the PoE trade platform.
+**Description:** This Chrome extension adds a button to the [Path of Exile (PoE) Wiki](https://poewiki.net/) page to quickly open a [PoE trade](https://www.pathofexile.com/trade) search page for a specific item. It allows you to seamlessly transition from researching an item on the PoE Wiki to finding it on the PoE trade platform.
 
 ## Example
 
@@ -15,10 +15,7 @@
 
 ## Installation
 
-1. Clone this repository or download the extension files.
-2. Open Chrome and go to `chrome://extensions/`.
-3. Enable "Developer mode" in the top right corner.
-4. Click "Load unpacked" and select the folder containing the extension files.
+Install via the Chrome web store: https://chrome.google.com/webstore/detail/poe-wiki-trade-link/nfgiigabbcilbognngigjadcmchfejfc/related?hl=en&authuser=0
 
 ## FAQ
 
@@ -28,16 +25,19 @@
 
 -   Is there a Firefox version?
     -   Unfortunately at this time Firefox does not support Service Workers which are required to run the extension. If the architecture changes to remove the service worker or Firefox allows them then I will add a Firefox extension.
+ 
+-   This doesn't work for me?
+    -   My testing scope of this tool is very limited, and I'm always looking for ways to improve it. Please create an Issue in the [Issues tab](https://github.com/SeaStove/poe-wiki-trade-link/issues) to report bugs or feature requests. You can view the project's [Kanban board](https://github.com/users/SeaStove/projects/3/views/1) to see the status of issues.
 
 ## The Code
 
-Getting a link to the PoE Trade site for a specific item is surprisingly complicated. In order to get this to work, the item name and type is grabbed from the wiki page, then a new tab is opened with the PoE Trade site. That new tab executes a query to the trade site's api to get the hash to go in the URL. Then the page is reloaded with that hash.
+Getting a link to the PoE Trade site for a specific item is surprisingly complicated. To get this to work, the item name and type are grabbed from the wiki page, then a new tab is opened with the PoE Trade site. That new tab executes a query to the trade site's API to get the hash to go in the URL. Then the page is reloaded with that hash.
 
 ### Wiki.js
 
 This JavaScript file is responsible for:
 
--   Extracting the item's name and type from the PoE Wiki page.
+-   Extract the item's name and type from the PoE Wiki page.
 -   Creating and styling a button to open the PoE trade search page.
 -   Handling button clicks and sending a message to the background script to initiate the trade search.
 
