@@ -49,7 +49,12 @@ if (pageTitleMain && messageData.type) {
     aTag.style.fontFamily = "var(--stylized-smallcaps-font)";
     aTag.textContent = "Trade";
 
-    const svgUrl = chrome.runtime.getURL("images/open-new-window.svg");
+    // Chrome Version
+    if (typeof chrome !== "undefined" && chrome.runtime && chrome.runtime) {
+        browser = chrome;
+    }
+
+    const svgUrl = browser.runtime.getURL("images/open-new-window.svg");
     const iconImage = document.createElement("img");
     iconImage.src = svgUrl;
     iconImage.style.width = "1rem";

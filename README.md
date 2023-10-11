@@ -24,39 +24,20 @@ Install via the Chrome web store: https://chrome.google.com/webstore/detail/poe-
     -   I have found that making too many requests too quickly will get you timed out from the trade site, just like with other tools. I don't know the exact number. This tool is using roughly the same process [Awakened PoE Trade](https://github.com/SnosMe/awakened-poe-trade/blob/b446c617cc1d4970067c209cf172a5dd93fcf72a/renderer/src/web/price-check/trade/pathofexile-trade.ts#L83) uses.
 
 -   Is there a Firefox version?
-    -   Unfortunately at this time Firefox does not support Service Workers which are required to run the extension. If the architecture changes to remove the service worker or Firefox allows them then I will add a Firefox extension.
- 
+
+    -   Soon!
+
 -   This doesn't work for me?
     -   My testing scope of this tool is very limited, and I'm always looking for ways to improve it. Please create an Issue in the [Issues tab](https://github.com/SeaStove/poe-wiki-trade-link/issues) to report bugs or feature requests. You can view the project's [Kanban board](https://github.com/users/SeaStove/projects/3/views/1) to see the status of issues.
 
 ## The Code
-
-Getting a link to the PoE Trade site for a specific item is surprisingly complicated. To get this to work, the item name and type are grabbed from the wiki page, then a new tab is opened with the PoE Trade site. That new tab executes a query to the trade site's API to get the hash to go in the URL. Then the page is reloaded with that hash.
 
 ### Wiki.js
 
 This JavaScript file is responsible for:
 
 -   Extract the item's name and type from the PoE Wiki page.
--   Creating and styling a button to open the PoE trade search page.
--   Handling button clicks and sending a message to the background script to initiate the trade search.
-
-### Background.js
-
-This JavaScript file serves as the background script for the extension. It handles:
-
--   Listening for messages from the content script (Wiki.js).
--   Creating a new tab with the PoE trade search page when requested.
--   Storing item information temporarily to share between scripts.
-
-### Trade.js
-
-This JavaScript file runs on the PoE trade search page. It:
-
--   Retrieves item information from the background script (Background.js).
--   Constructs a search query for the PoE trade API based on the item name and type.
--   Sends a POST request to the API to find relevant listings.
--   Redirects the user to the PoE trade search results page.
+-   Creating and styling a button to open the PoE trade search page using the item name and type as a query.
 
 ## Contributing
 

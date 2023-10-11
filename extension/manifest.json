@@ -15,5 +15,13 @@
             "js": ["scripts/content/wiki.js"],
             "matches": ["https://www.poewiki.net/*"]
         }
-    ]
+    ],
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "firefox@poe-wiki-trade-link"
+        },
+        "chrome": {
+            "id": "chrome@poe-wiki-trade-link"
+        }
+    }
 }
