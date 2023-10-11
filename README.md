@@ -19,10 +19,6 @@ Install via the Chrome web store: https://chrome.google.com/webstore/detail/poe-
 
 ## FAQ
 
--   Are there any downsides?
-
-    -   I have found that making too many requests too quickly will get you timed out from the trade site, just like with other tools. I don't know the exact number. This tool is using roughly the same process [Awakened PoE Trade](https://github.com/SnosMe/awakened-poe-trade/blob/b446c617cc1d4970067c209cf172a5dd93fcf72a/renderer/src/web/price-check/trade/pathofexile-trade.ts#L83) uses.
-
 -   Is there a Firefox version?
 
     -   Soon!
