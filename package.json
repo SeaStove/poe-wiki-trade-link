@@ -1,6 +1,6 @@
 {
     "name": "poe-wiki-trade-link",
-    "version": "0.3",
+    "version": "0.5",
     "description": "",
     "main": "index.js",
     "scripts": {
