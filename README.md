@@ -15,7 +15,7 @@
 
 ## Installation
 
-Chrome: https://chrome.google.com/webstore/detail/poe-wiki-trade-link/nfgiigabbcilbognngigjadcmchfejfc/related?hl=en&authuser=0
+Chrome: [https://chrome.google.com/webstore/detail/poe-wiki-trade-link/nfgiigabbcilbognngigjadcmchfejfc/related?hl=en&authuser=0](https://chromewebstore.google.com/detail/poe-wiki-trade-link/nfgiigabbcilbognngigjadcmchfejfc)
 
 Firefox: https://addons.mozilla.org/en-US/firefox/addon/poe-wiki-trade-link/
 
